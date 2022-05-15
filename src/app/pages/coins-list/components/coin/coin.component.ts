@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ICoins } from '../../coins-list.config';
 
 @Component({
   selector: 'app-coin',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coin.component.scss']
 })
 export class CoinComponent implements OnInit {
+
+  @Input() public coins?: ICoins;
 
   constructor() { }
 

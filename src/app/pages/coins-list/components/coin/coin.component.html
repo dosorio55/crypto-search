@@ -1,1 +1,4 @@
-<p>coin works!</p>
+<div *ngIf="coins">
+    <p>{{coins.name}}</p>
+    <img [src]="coins.image" alt="">
+</div>
