@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { coins, ICoins } from '../coins-list/coins-list.config';
 
 @Component({
   selector: 'app-coin-detail',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoinDetailComponent implements OnInit {
 
-  constructor() { }
+  public coinsList : ICoins[] = coins;
+  public currentCoin?: ICoins;
+
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) =>{
+      const paramId = params['id'];
+      this.currentCoin = this.coinsList.find(coin => coin.id === paramId)
+    })
   }
 
 }

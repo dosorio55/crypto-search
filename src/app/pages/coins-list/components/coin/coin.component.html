@@ -1,4 +1,5 @@
 <div *ngIf="coins">
     <p>{{coins.name}}</p>
     <img [src]="coins.image" alt="">
+    <a [routerLink]="['/coin-detail', coins.id ]">detail</a>
 </div>

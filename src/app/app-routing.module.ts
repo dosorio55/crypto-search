@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('src/app/pages/coins-list/coins-list.module').then(m => m.CoinsListModule)
   },
   {
-    path: 'coin-detail',
+    path: 'coin-detail/:id',
     loadChildren: () => import('src/app/pages/coin-detail/coin-detail.module').then(m => m.CoinDetailModule)
 
   },

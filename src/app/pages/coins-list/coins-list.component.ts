@@ -8,7 +8,7 @@ import { coins, ICoins } from './coins-list.config';
 })
 export class CoinsListComponent implements OnInit {
 
-  public coinsList : ICoins[] = coins
+  public coinsList : ICoins[] = coins;
 
   constructor() { }
 
