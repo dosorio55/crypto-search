@@ -8,6 +8,10 @@ const routes: Routes = [
     loadChildren: () => import('src/app/pages/home/home.module').then(m => m.HomeModule)
   },
   {
+    path: 'coins-list',
+    loadChildren: () => import('src/app/pages/coins-list/coins-list.module').then(m => m.CoinsListModule)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
