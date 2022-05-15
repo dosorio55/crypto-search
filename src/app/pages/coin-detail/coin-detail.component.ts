@@ -11,6 +11,7 @@ export class CoinDetailComponent implements OnInit {
 
   public coinsList : ICoins[] = coins;
   public currentCoin?: ICoins;
+  public searchValue: string = ""
 
 
   constructor(private activatedRoute: ActivatedRoute) { }
