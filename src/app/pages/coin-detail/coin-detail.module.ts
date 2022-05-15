@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { CoinDetailRoutingModule } from './coin-detail-routing.module';
 import { CoinDetailComponent } from './coin-detail.component';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,8 +11,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    CoinDetailRoutingModule,
-    FormsModule
+    CoinDetailRoutingModule
   ]
 })
 export class CoinDetailModule { }

@@ -1,7 +1,7 @@
-<input type="text">
+<input [(ngModel)]="searchValue" type="text" (change)="onSearch()">
 <!-- <input [(ngModel)]="filterValue" (change)="onFilter()"> -->
 <app-coin
-    *ngFor="let coin of coinsList"
+    *ngFor="let coin of filteredCoins"
     [coins]="coin"
 ></app-coin>
 

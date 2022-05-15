@@ -9,10 +9,17 @@ import { coins, ICoins } from './coins-list.config';
 export class CoinsListComponent implements OnInit {
 
   public coinsList : ICoins[] = coins;
+  public filteredCoins: ICoins[] =  this.coinsList;
+  public searchValue: string = "";
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSearch(){
+    this.filteredCoins = this.coinsList.filter(coins => coins.name.toLocaleLowerCase()
+    .includes(this.searchValue.toLocaleLowerCase()))
   }
 
 }
