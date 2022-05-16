@@ -1,9 +1,9 @@
 <header class="headerContainer">
-    <h2 class="headerContainer__logo">CryptoSearcher</h2>
-        <ul class="headerContainer__links">
-            <li><a [routerLink]="['']">Home</a></li>
-            <li><a [routerLink]="['/coins-list']">coins list</a></li>
-            <li><a [routerLink]="['']">Contact us</a></li>
+    <h2 [routerLink]="['']" class="headerContainer__logo">CryptoSearcher</h2>
+        <ul>
+            <li class="headerContainer__links"><a [routerLink]="['']">Home</a></li>
+            <li class="headerContainer__links"><a [routerLink]="['/coins-list']">coins list</a></li>
+            <li class="headerContainer__links"><a [routerLink]="['']">Contact us</a></li>
         </ul>
-    <a class="headerContainer__loginBtn" [routerLink]=""><button>login</button></a>
+    <button class="headerContainer__loginBtn" [routerLink]="">login</button>
 </header>

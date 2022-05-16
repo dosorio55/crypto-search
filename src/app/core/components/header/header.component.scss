@@ -1,16 +1,53 @@
-.headerContainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 9%;
-    background-color: #24252a;
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18vh;
+  background-color: #24252a;
+  text-transform: uppercase;
+  user-select: none;
+  // position: fixed;
 
-    & h2, li, a, button {
-      color: #edf0f1; 
-      text-decoration: none;
-    }
+  & h2,
+  li,
+  a {
+    color: #edf0f1;
+    text-decoration: none;
+  }
 
-    &__links{
-        display: flex;
+  &__logo {
+    cursor: pointer;
+  }
+
+  ul {
+    margin-right: 7rem;
+  }
+
+  &__links {
+    display: inline-block;
+    list-style: none;
+    padding: 0 5rem;
+
+    & a:hover {
+      transition: all .2s ease 0s;
+
+      color: #f9bc60;
     }
+  }
+
+  &__loginBtn {
+    padding: 15px 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: rgba($color: #f9bc60, $alpha: 1.0);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+
+    &:hover{
+    background-color: rgba($color: #f9bc60, $alpha: 0.9);
+
+    }
+  }
 }
