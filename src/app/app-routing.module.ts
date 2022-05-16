@@ -14,7 +14,10 @@ const routes: Routes = [
   {
     path: 'coin-detail/:id',
     loadChildren: () => import('src/app/pages/coin-detail/coin-detail.module').then(m => m.CoinDetailModule)
-
+  },
+  {
+    path: 'contact-us',
+    loadChildren: () => import('src/app/pages/contact-us/contact-us.module').then(m => m.ContactUsModule)
   },
   {
     path: '**',
