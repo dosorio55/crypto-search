@@ -1,5 +1,9 @@
-<div>
-    <a [routerLink]="['']">Home</a>
-    <a [routerLink]="['/coins-list']">coins list</a>
-    <a [routerLink]="['']">Contact us</a>
-</div>
+<header class="headerContainer">
+    <h2 class="headerContainer__logo">CryptoSearcher</h2>
+        <ul class="headerContainer__links">
+            <li><a [routerLink]="['']">Home</a></li>
+            <li><a [routerLink]="['/coins-list']">coins list</a></li>
+            <li><a [routerLink]="['']">Contact us</a></li>
+        </ul>
+    <a class="headerContainer__loginBtn" [routerLink]=""><button>login</button></a>
+</header>

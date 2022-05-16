@@ -1,0 +1,16 @@
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 9%;
+    background-color: #24252a;
+
+    & h2, li, a, button {
+      color: #edf0f1; 
+      text-decoration: none;
+    }
+
+    &__links{
+        display: flex;
+    }
+}
