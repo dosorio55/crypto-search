@@ -1,8 +1,14 @@
-<div *ngIf="coins" class="listContainer">
-    <img class="listContainer__img" [src]="coins.image" alt="">
-    <p>{{coins.symbol}}</p>
-    <a [routerLink]="['/coin-detail', coins.id ]">detail</a>
-    <p>{{coins.price_change_percentage_24h * 100}}%</p>
+<a [routerLink]="['/coin-detail', coins.id ]" *ngIf="coins">
+<div class="listContainer">
+    <div class="listContainer__name">
+        <img class="listContainer__img" [src]="coins.image" alt="">
+        <div class="listContainer__name__container">
+            <p>{{coins.name}}</p>
+            <p>{{coins.symbol}}</p>
+        </div>
+    </div>
+    <p>{{coins.current_price}}</p>
     <p>{{coins.market_cap}}</p>
+    <p>{{coins.price_change_percentage_24h * 100}}%</p>
 </div>
-
+</a>
