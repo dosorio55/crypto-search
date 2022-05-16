@@ -1,0 +1,10 @@
+.theadContainer{
+    display: grid;
+    grid-template-columns: repeat(5, 15rem);
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+        padding: 1rem 2rem;
+    }
+}
