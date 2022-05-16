@@ -1,8 +1,22 @@
 <input [(ngModel)]="searchValue" type="text" (change)="onSearch()">
 <!-- <input [(ngModel)]="filterValue" (change)="onFilter()"> -->
-<app-coin
-    *ngFor="let coin of filteredCoins"
-    [coins]="coin"
-></app-coin>
 
 
+<table>
+    <thead>
+        <tr>
+            <th>coin name</th>
+            <th>price</th>
+            <th>market cap</th>
+            <th>24h change</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr> -->
+
+            <app-coin *ngFor="let coin of filteredCoins" [coins]="coin">
+            </app-coin>
+
+        <!-- </tr> -->
+    </tbody>
+</table>
