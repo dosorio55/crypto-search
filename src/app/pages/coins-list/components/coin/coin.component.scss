@@ -3,10 +3,15 @@
    grid-template-columns: repeat(4, 15rem);
    align-items: center;
    justify-content: center;
+   padding: .3rem;
 
 
     & > * {
-        padding: 0 2rem;
+        padding: .5rem;
+        margin: 0 2rem;
+        text-transform: uppercase;
+        cursor: pointer;
+
     }
 
     &__name{
@@ -15,6 +20,11 @@
 
         &__container{
             padding: 0 0 0 1rem;
+
+            & > * {
+                padding: 0;
+                margin: 0rem;
+            }
         }
     }
 

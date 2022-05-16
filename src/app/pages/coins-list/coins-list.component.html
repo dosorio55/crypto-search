@@ -1,12 +1,11 @@
-<div>
+<div class="inputContainer">
     <input [(ngModel)]="searchValue" type="text" (change)="onSearch()">
-    <div class="theadContainer">
-        <p class="theadContainer__title">all coins</p>
-        <p class="theadContainer__title">price</p>
-        <p class="theadContainer__title">market cap</p>
-        <p class="theadContainer__title">24h change</p>
-    </div>
-    <app-coin *ngFor="let coin of filteredCoins" [coins]="coin">
-        </app-coin>
 </div>
-
+<div class="theadContainer">
+    <p class="theadContainer__title">all coins</p>
+    <p class="theadContainer__title">price</p>
+    <p class="theadContainer__title">market cap</p>
+    <p class="theadContainer__title">24h change</p>
+</div>
+<app-coin *ngFor="let coin of filteredCoins" [coins]="coin">
+</app-coin>

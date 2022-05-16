@@ -1,10 +1,26 @@
-.theadContainer{
+.inputContainer{
     display: grid;
     grid-template-columns: repeat(4, 15rem);
     align-items: center;
     justify-content: center;
 
+    & input {
+        margin-left: 2.3rem;
+        border-radius: 15px;
+    }
+}
+
+.theadContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 15rem);
+    align-items: center;
+    justify-content: center;
+    // background-color: red;
+
     & > * {
-        padding: 1rem 2rem;
+        font-weight: 700;
+        padding: .5rem;
+        margin: 1rem 2rem;
+        text-transform: uppercase;
     }
 }
