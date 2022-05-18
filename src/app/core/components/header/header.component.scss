@@ -27,6 +27,12 @@
     display: inline-block;
     list-style: none;
     padding: 0 5rem;
+    cursor: pointer;
+
+    &--active{
+      font-weight: 700;
+      text-decoration: underline;
+    }
 
     & a:hover {
       transition: all .2s ease 0s;

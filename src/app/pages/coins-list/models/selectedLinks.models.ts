@@ -1,4 +1,5 @@
-interface Links {
-    name: []; //gallery contat o vacio
-    routeHlink: []; 
+export interface ILinks {
+    name: string; //gallery contat o vacio
+    routeHlink: string; 
 }
+

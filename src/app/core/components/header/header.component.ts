@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { ILinks } from 'src/app/pages/coins-list/models/selectedLinks.models';
+import { homeLinksArray } from './header.config';
 
 @Component({
   selector: 'app-header',
@@ -8,17 +10,19 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  public activeUrl? : string;
+  public activeUrl?: string;
 
-  
+  public homeLinks: ILinks[] = homeLinksArray;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.router.events.subscribe((event)=>{
-      if(event instanceof NavigationEnd){
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
         this.activeUrl = event.url.split('/')[1]
-      } 
+        console.log(this.activeUrl)
+      }
+
     })
   }
 
