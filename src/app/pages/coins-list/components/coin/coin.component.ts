@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ICoins } from '../../coins-list.config';
+import { ICoins } from '../../models/product.models';
 
 @Component({
   selector: 'app-coin',
