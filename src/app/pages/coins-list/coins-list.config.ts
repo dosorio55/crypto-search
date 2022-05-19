@@ -1,4 +1,4 @@
-import { ICoins } from "./models/product.models";
+import { ICoins } from "../../core/services/coins/models/product.models";
 
 
 export const coins: ICoins[]  = [

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { coins } from '../coins-list/coins-list.config';
-import { ICoins } from '../coins-list/models/product.models';
+import { ICoins } from '../../core/services/coins/models/product.models';
 
 @Component({
   selector: 'app-coin-detail',

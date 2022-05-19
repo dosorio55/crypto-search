@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { ILinks } from 'src/app/pages/coins-list/models/selectedLinks.models';
+import { ILinks } from 'src/app/core/services/coins/models/selectedLinks.models';
 import { homeLinksArray } from './header.config';
 
 @Component({
