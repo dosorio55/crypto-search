@@ -1,4 +1,6 @@
 <div *ngIf="currentCoin">
-    <p>{{currentCoin.name}}</p>
     <img [src]="currentCoin.image" alt="">
+    <p>{{currentCoin.id}}</p>
+    <p>{{currentCoin.current_price}} usd</p>
+    <p>{{currentCoin.price_change_percentage_24h}}%</p>
 </div>

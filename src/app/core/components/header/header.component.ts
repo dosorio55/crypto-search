@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.activeUrl = event.url.split('/')[1]
-        console.log(this.activeUrl)
       }
 
     })

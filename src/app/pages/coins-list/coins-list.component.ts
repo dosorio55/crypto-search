@@ -22,6 +22,7 @@ export class CoinsListComponent implements OnInit {
   ngOnInit(): void {
     this.coinsService.getCoins().subscribe((coins) => {
      this.coinsList = coins;
+     console.log(this.coinsList)
      this.filteredCoins = coins
     })
   }
