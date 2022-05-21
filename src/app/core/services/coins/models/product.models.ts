@@ -1,4 +1,4 @@
-export interface ICoins {
+export interface IApiCoins {
     id: string;
     symbol: string;
     name: string;
@@ -25,4 +25,15 @@ export interface ICoins {
     atl_date: string;
     roi?: {} | null;
     last_updated: string;
+  }
+
+  export interface ICoins {
+    id: string;
+    name: string;
+    symbol: string;
+    current_price: number;
+    market_cap: number;
+    price_change_percentage_24h: number;
+    image: string;
+    favorite: boolean;
   }
