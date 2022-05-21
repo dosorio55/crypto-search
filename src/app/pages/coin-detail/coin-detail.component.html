@@ -1,6 +1,6 @@
-<div *ngIf="currentCoin">
-    <img [src]="currentCoin.image" alt="">
-    <p>{{currentCoin.id}}</p>
-    <p>{{currentCoin.current_price}} usd</p>
-    <p>{{currentCoin.price_change_percentage_24h}}%</p>
+<div *ngIf="(currentCoin$ | async) as currentCoin ">
+    <img [src]="currentCoin[0].image" alt="">
+    <p>{{currentCoin[0].id}}</p>
+    <p>{{currentCoin[0].current_price}} usd</p>
+    <p>{{currentCoin[0].price_change_percentage_24h}}</p>
 </div>

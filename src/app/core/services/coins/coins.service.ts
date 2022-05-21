@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ICoins } from './models/product.models';
 import { environment } from 'src/environments/environment';
-import { ISimpleCoin } from './models/simpleCoin.models';
 
 @Injectable({
   providedIn: 'root'
@@ -19,4 +18,7 @@ export class CoinsService {
   public getCoinById(coinId: string): Observable<ICoins[]>{
     return this.httpClient.get<ICoins[]>(`${environment.apiUrl}coins/markets?vs_currency=usd&ids=${coinId}&sparkline=false`);
   }
+  // public getCoinById(coinId: string): Observable<any>{
+  //   return this.httpClient.get<any>(`https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd&include_market_cap=true&include_24hr_change=true`);
+  // }
 }

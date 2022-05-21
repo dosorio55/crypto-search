@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { coins } from '../coins-list/coins-list.config';
 import { ICoins } from '../../core/services/coins/models/product.models';
 import { CoinsService } from 'src/app/core/services/coins/coins.service';
-import { ISimpleCoin } from 'src/app/core/services/coins/models/simpleCoin.models';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-coin-detail',
@@ -12,9 +11,9 @@ import { ISimpleCoin } from 'src/app/core/services/coins/models/simpleCoin.model
 })
 export class CoinDetailComponent implements OnInit {
 
-  // public coinsList : ICoins[] = coins;
-  public currentCoin?: ICoins;
+  public currentCoin$?: Observable<ICoins[]>;
   public searchValue: string = ""
+  // public currentCoin?: ICoins;
   // public actualCoinId: string = ""
 
 
@@ -22,14 +21,17 @@ export class CoinDetailComponent implements OnInit {
     private coinService: CoinsService) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) =>{
-      const CoinId  = params['id'];
-      this.coinService.getCoinById(CoinId).subscribe((coin) => {
-         this.currentCoin = coin[0]
-          console.log(this.currentCoin)
-      //  const dealCoin = coin[this.actualCoinId]
-      //  this.currentCoin = dealCoin;
-      });
+    this.activatedRoute.params.subscribe((params) => {
+      const CoinId = params['id'];
+      // this.actualCoinId = params['id'];
+     this.currentCoin$ = this.coinService.getCoinById(CoinId);
+      // .subscribe((coin) => {
+
+      //    const dealCoin = coin[this.actualCoinId]
+      //    this.currentCoin = dealCoin;
+      //   console.log(coin)
+      //   console.log(dealCoin.usd)
+      // });
     })
   }
 }
