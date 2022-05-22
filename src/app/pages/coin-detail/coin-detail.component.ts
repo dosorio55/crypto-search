@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ICoins } from '../../core/services/coins/models/product.models';
+import { ICoins } from '../../core/services/models/product.models';
 import { CoinsService } from 'src/app/core/services/coins/coins.service';
 import { Observable } from 'rxjs';
 

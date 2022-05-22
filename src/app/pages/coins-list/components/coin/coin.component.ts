@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ICoins } from '../../../../core/services/coins/models/product.models';
+import { ICoins } from '../../../../core/services/models/product.models';
 
 @Component({
   selector: 'app-coin',
@@ -7,6 +7,8 @@ import { ICoins } from '../../../../core/services/coins/models/product.models';
   styleUrls: ['./coin.component.scss']
 })
 export class CoinComponent implements OnInit {
+
+  public currencyCoin: string = "USD"
 
   @Input() public coins?: ICoins;
 

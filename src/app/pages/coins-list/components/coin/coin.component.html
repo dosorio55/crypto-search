@@ -6,7 +6,7 @@
             <p>{{coins.symbol}}</p>
         </div>
     </div>
-    <p>{{coins.current_price}}</p>
+    <p>{{coins.current_price | currency: currencyCoin}}</p>
     <p>{{coins.market_cap}}</p>
-    <p>{{coins.price_change_percentage_24h.toFixed(3)}}%</p>
+    <p>{{coins.price_change_percentage_24h.toFixed(2)}}%</p>
 </div>

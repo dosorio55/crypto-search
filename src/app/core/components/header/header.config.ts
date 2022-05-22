@@ -1,4 +1,4 @@
-import { ILinks } from "src/app/core/services/coins/models/selectedLinks.models";
+import { ILinks } from "src/app/core/services/models/selectedLinks.models";
 
 export const homeLinksArray: ILinks[] = [
     {
