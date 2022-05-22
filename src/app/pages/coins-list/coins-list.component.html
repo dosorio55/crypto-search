@@ -1,6 +1,7 @@
-<div class="container">
+<div *ngIf="coinsList" class="container">
     <div class="inputContainer">
-        <input [(ngModel)]="searchValue" type="text" (change)="onSearch()">
+        <input [(ngModel)]="searchValue" type="text">
+        <input type="number" [(ngModel)]="pageNumber">
     </div>
     <div class="theadContainer">
         <p class="theadContainer__title">all coins</p>
@@ -8,6 +9,7 @@
         <p class="theadContainer__title">market cap</p>
         <p class="theadContainer__title">24h change</p>
     </div>
-    <app-coin *ngFor="let coin of filteredCoins" [coins]="coin">
+    <app-coin *ngFor="let coin of (coinsList | filter: searchValue: pageNumber)" 
+    [coins]="coin">
     </app-coin>
 </div>

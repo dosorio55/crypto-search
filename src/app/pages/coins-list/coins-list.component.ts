@@ -10,8 +10,8 @@ import { ICoins } from '../../core/services/models/product.models';
 export class CoinsListComponent implements OnInit {
 
   public coinsList?: ICoins[];
-  public filteredCoins?: ICoins[] =  this.coinsList;
   public searchValue: string = "";
+  public pageNumber: number = 0;
 
   constructor(
     private coinsService: CoinsService
@@ -22,14 +22,12 @@ export class CoinsListComponent implements OnInit {
   ngOnInit(): void {
     this.coinsService.getCoins().subscribe((coins) => {
      this.coinsList = coins;
-     console.log(this.coinsList)
-     this.filteredCoins = coins
     })
   }
 
-  onSearch(){
-    this.filteredCoins = this.coinsList?.filter(coins => coins.name.toLocaleLowerCase()
-    .includes(this.searchValue.toLocaleLowerCase()))
-  }
+  // onSearch(){
+  //   this.filteredCoins = this.coinsList?.filter(coins => coins.name.toLocaleLowerCase()
+  //   .includes(this.searchValue.toLocaleLowerCase()))
+  // }
 
 }
