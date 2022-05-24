@@ -7,7 +7,7 @@
 
 
     & > * {
-        padding: .5rem;
+        padding: .4rem;
         margin: 0 2rem;
         text-transform: uppercase;
         cursor: pointer;
@@ -32,4 +32,9 @@
        width: 30px;
        height: 30px; 
     }
+}
+
+.line {
+    background-color: rgb(173, 173, 173);
+    height: 1px;
 }

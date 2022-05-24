@@ -1,12 +1,8 @@
 <header class="headerContainer">
     <h2 [routerLink]="['']" class="headerContainer__logo">CryptoSearcher</h2>
-        <ul>
-            <li *ngFor="let item of homeLinks" class="headerContainer__links"
-            [routerLink]="[item.routeHlink]"
-            [ngClass]="{
-            'headerContainer__links--active': activeUrl === item.routeHlink}
-            "
-            >{{item.name}}</li>
-        </ul>
+    <ul>
+        <li *ngFor="let item of homeLinks" class="headerContainer__links" [routerLink]="[item.routeHlink]"
+            [ngClass]="{'headerContainer__links--active': activeUrl === item.routeHlink}">{{item.name}}</li>
+    </ul>
     <button class="headerContainer__loginBtn" [routerLink]="">login</button>
 </header>

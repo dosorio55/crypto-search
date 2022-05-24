@@ -14,43 +14,39 @@ Chart.register(...registerables);
 export class CoinDetailComponent implements OnInit {
 
   public currentCoin$?: Observable<ICoins[]>;
-  public searchValue: string = ""
-  // private coinDates: number[] = [];
-  // private coinPrices: number[] = [];
+  // public searchValue: string = ""
 
   constructor(private activatedRoute: ActivatedRoute,
     private coinService: CoinsService) { }
 
   ngOnInit(): void {
 
-    let marketDates: number[] = [];
-    let marketPrices: number[] = [];
+    let marketDates: string[] = [];
+    let marketPrices: string[] = [];
 
     this.activatedRoute.params.subscribe((params) => {
       const CoinId = params['id'];
       this.currentCoin$ = this.coinService.getCoinById(CoinId);
       this.coinService.getMarketRange(CoinId).subscribe((coinMarketRange) => {
-        for (let index = 0; index < 200; index++) {
-  
-          const datePrices = coinMarketRange.prices[index][0];
-          const pricesP = coinMarketRange.prices[index][1];  
-  
-          marketDates.push(datePrices)
-          marketPrices.push(pricesP)
-  
-        }
+        coinMarketRange.prices.map(data => {
+          let unixToDate = new Date(data[0])
+          marketDates.push(`${unixToDate.getDate()}/${unixToDate.getMonth()}/${unixToDate.getFullYear()}`)
+          let priceToFixed = data[1].toFixed(2) 
+          marketPrices.push(priceToFixed)
+        })
+        //Draw Chart
         const myChart = new Chart("myChart", {
           type: 'bar',
           data: {
             datasets: [{
-              label: 'test',
+              label: CoinId,
               data: marketPrices,
               backgroundColor: 'red',
-            borderColor: 'black',
+              borderColor: 'black',
             }],
             labels: marketDates
           },
-          
+
           options: {
             scales: {
               y: {

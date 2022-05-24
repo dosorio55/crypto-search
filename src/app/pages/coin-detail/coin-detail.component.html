@@ -1,8 +1,8 @@
 <div *ngIf="(currentCoin$ | async) as currentCoin ">
     <img [src]="currentCoin[0].image" alt="">
-    <p>{{currentCoin[0].id}}</p>
-    <p>{{currentCoin[0].current_price}} usd</p>
-    <p>{{currentCoin[0].price_change_percentage_24h}}</p>
+    <p>{{currentCoin[0].id | uppercase}}</p>
+    <p>{{currentCoin[0].current_price | currency}}</p>
+    <p>{{currentCoin[0].price_change_percentage_24h.toFixed(2)}}%</p>
 </div>
 <div class="chartContainer" style="width: 800px;height:800px">
     <canvas id="myChart"></canvas>
