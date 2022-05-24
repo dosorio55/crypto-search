@@ -1,7 +1,7 @@
 import { IApiCoins, ICoins } from "./product.models"
 
-export const transformProduct = (apiCoinResponse: IApiCoins[]) => {
-    apiCoinResponse.map((mapedCoins) => ({
+export const transformProduct = (apiCoinResponse: IApiCoins[]):ICoins[] => {
+    return apiCoinResponse.map((mapedCoins) => ({
         id: mapedCoins.id,
         name: mapedCoins.name,
         symbol: mapedCoins.symbol,
