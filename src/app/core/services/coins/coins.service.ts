@@ -16,17 +16,6 @@ export class CoinsService {
   public getCoins(): Observable<ICoins[]> {
     return this.httpClient.get<IApiCoins[]>(`${environment.apiUrl}coins/markets?vs_currency=eur&order=market_cap_desc&per_page=25&page=1&sparkline=false`)
       .pipe(map(res => transformProduct(res)
-        
-      //   res.map(mapedCoins => ({
-      //   id: mapedCoins.id,
-      //   name: mapedCoins.name,
-      //   symbol: mapedCoins.symbol,
-      //   current_price: mapedCoins.current_price,
-      //   market_cap: mapedCoins.market_cap,
-      //   price_change_percentage_24h: mapedCoins.price_change_percentage_24h,
-      //   image: mapedCoins.image,
-      //   favorite: false
-      // }))
       )
       )
   }
