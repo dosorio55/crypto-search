@@ -26,4 +26,8 @@ export class CoinsListComponent implements OnInit {
     })
   }
 
+  public pageNumberFunction(actualPage : number){
+    this.pageNumber = actualPage
+  }
+
 }
