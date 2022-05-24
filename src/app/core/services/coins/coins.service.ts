@@ -32,8 +32,8 @@ export class CoinsService {
     return this.httpClient.get<ICoins[]>(`${environment.apiUrl}coins/markets?vs_currency=usd&ids=${coinId}&sparkline=false`);
   }
 
-  public getMarketRange(coinId: string): Observable<IPrices> {
-    return this.httpClient.get<IPrices>(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=1`)
+  public getMarketRange(coinId: string, daysRange: number): Observable<IPrices> {
+    return this.httpClient.get<IPrices>(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=${daysRange}`)
   }
 
 }

@@ -14,7 +14,7 @@ Chart.register(...registerables);
 export class CoinDetailComponent implements OnInit {
 
   public currentCoin$?: Observable<ICoins[]>;
-  // public searchValue: string = ""
+  public daysRange: number = 1;
 
   constructor(private activatedRoute: ActivatedRoute,
     private coinService: CoinsService) { }
@@ -27,11 +27,11 @@ export class CoinDetailComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       const CoinId = params['id'];
       this.currentCoin$ = this.coinService.getCoinById(CoinId);
-      this.coinService.getMarketRange(CoinId).subscribe((coinMarketRange) => {
+      this.coinService.getMarketRange(CoinId, this.daysRange).subscribe((coinMarketRange) => {
         coinMarketRange.prices.map(data => {
           let unixToDate = new Date(data[0])
           marketDates.push(`${unixToDate.getDate()}/${unixToDate.getMonth()}/${unixToDate.getFullYear()}`)
-          let priceToFixed = data[1].toFixed(2) 
+          let priceToFixed = data[1].toFixed(2)
           marketPrices.push(priceToFixed)
         })
         //Draw Chart
@@ -59,4 +59,9 @@ export class CoinDetailComponent implements OnInit {
     })
 
   }
+
+  public changeDaysRange(days: number){
+    this.daysRange = days
+  }
+
 }

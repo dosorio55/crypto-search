@@ -4,6 +4,11 @@
     <p>{{currentCoin[0].current_price | currency}}</p>
     <p>{{currentCoin[0].price_change_percentage_24h.toFixed(2)}}%</p>
 </div>
-<div class="chartContainer" style="width: 800px;height:800px">
+<div class="chartContainer" style="width: 800px;height:420px">
     <canvas id="myChart"></canvas>
-  </div>
+</div>
+
+<button (click)="changeDaysRange(1)">1</button>
+<button (click)="changeDaysRange(7)">7</button>
+<button (click)="changeDaysRange(15)">15</button>
+<button (click)="changeDaysRange(30)">30</button>
