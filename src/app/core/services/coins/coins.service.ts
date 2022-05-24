@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { IApiCoins, ICoins } from '../models/product.models';
 import { environment } from 'src/environments/environment';
+import { IPrices } from '../models/prices-date.models';
 
 @Injectable({
   providedIn: 'root'
@@ -31,12 +32,8 @@ export class CoinsService {
     return this.httpClient.get<ICoins[]>(`${environment.apiUrl}coins/markets?vs_currency=usd&ids=${coinId}&sparkline=false`);
   }
 
-}
+  public getMarketRange(coinId: string): Observable<IPrices> {
+    return this.httpClient.get<IPrices>(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=1`)
+  }
 
-// id: mapedCoins.id,
-// name: mapedCoins.name,
-// symbol: mapedCoins.symbol,
-// current_price: mapedCoins.current_price,
-// market_cap: mapedCoins.market_cap,
-// price_change_percentage_24h: mapedCoins.price_change_percentage_24h,
-// image: mapedCoins.image
+}

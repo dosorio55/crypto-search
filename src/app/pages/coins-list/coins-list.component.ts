@@ -14,20 +14,16 @@ export class CoinsListComponent implements OnInit {
   public pageNumber: number = 0;
 
   constructor(
+    //coin service to get products
     private coinsService: CoinsService
     ) { }
 
 
-  //petición de suscribe a la api
+  //suscribe to the api to get products
   ngOnInit(): void {
     this.coinsService.getCoins().subscribe((coins) => {
      this.coinsList = coins;
     })
   }
-
-  // onSearch(){
-  //   this.filteredCoins = this.coinsList?.filter(coins => coins.name.toLocaleLowerCase()
-  //   .includes(this.searchValue.toLocaleLowerCase()))
-  // }
 
 }
