@@ -1,0 +1,74 @@
+.modalContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    // transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
+    height: 50%;
+    width: 402px;
+    border-radius: 5px;
+    background-color: #dadada;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    z-index: 1;
+
+    &--active{
+    transform: translate(-50%, -50%) scale(1);
+        
+    }
+
+    &__x{
+        width: 10px;
+        height: 10px;
+        top: 4%;
+        right: 4%;
+        position: absolute;
+    }
+
+
+    &__item {
+        margin: 1rem;
+        padding: 1rem;
+        width: 70%;
+    }
+
+    &__line {
+        width: 80%;
+        height: 1px;
+        background-color: black;
+        margin-bottom: 1.3rem;
+    }
+
+    &__btn {
+        text-transform: uppercase;
+        background-color: #f9bc60;
+        cursor: pointer;
+        font-size: medium;
+        font-weight: 700;
+    }
+}
+
+.overlay {
+    position: fixed;
+    // opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    cursor: pointer;
+    z-index: 0.3;
+    transform: scale(0);
+    
+    &--active{
+        
+        
+        transform: scale(1);
+            
+    }
+
+}
