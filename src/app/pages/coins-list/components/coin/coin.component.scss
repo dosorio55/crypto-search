@@ -5,12 +5,16 @@
    justify-content: center;
    padding: .3rem;
 
+   &:hover{
+       background-color: #f1f1f1;
+       cursor: pointer;
+   }
+
 
     & > * {
         padding: .4rem;
         margin: 0 2rem;
         text-transform: uppercase;
-        cursor: pointer;
 
     }
 

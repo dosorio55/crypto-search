@@ -15,35 +15,32 @@ export class CoinDetailComponent implements OnInit {
 
   public currentCoin$?: Observable<ICoins[]>;
   public daysRange: number = 1;
-  public testChart: any; 
-  public CoinId : string = "";
-  
-      public marketDates: string[] = [];
-      public marketPrices: string[] = [];
+  public coinChart: any;
+  public CoinId: string = "";
+
+  public marketDates: string[] = [];
+  public marketPrices: string[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
     private coinService: CoinsService) { }
 
   ngOnInit(): void {
-    if (this.testChart) {
-      this.testChart.destroy();
-  }
     this.activatedRoute.params.subscribe((params) => {
       this.CoinId = params['id'];
       this.currentCoin$ = this.coinService.getCoinById(this.CoinId);
       this.coinService.getMarketRange(this.CoinId, this.daysRange).subscribe((coinMarketRange) => {
         coinMarketRange.prices.map(data => {
           let unixToDate = new Date(data[0])
-          this.marketDates.push(`${unixToDate.getDate()}/${unixToDate.getMonth()}/${unixToDate.getFullYear()}`)
+          this.marketDates.push(`${unixToDate.getHours()}:${unixToDate.getMinutes()}/${unixToDate.getDate()}`)
           let priceToFixed = data[1].toFixed(2)
           this.marketPrices.push(priceToFixed)
         })
         //Draw Chart
-        this.testChart = new Chart("myChart", {
+        this.coinChart = new Chart("myChart", {
           type: 'bar',
           data: {
             datasets: [{
-              label: this.CoinId,
+              label: this.CoinId.toUpperCase(),
               data: this.marketPrices,
               backgroundColor: 'red',
               borderColor: 'black',
@@ -64,27 +61,31 @@ export class CoinDetailComponent implements OnInit {
 
   }
 
-  public changeDaysRange(days: number){
-    if (this.testChart) {
-      this.testChart.destroy();
-  }
+  public changeDaysRange(days: number) {
+    !this.coinChart || this.coinChart.destroy();
 
-  this.marketDates = []
-  this.marketPrices = []
+    this.marketDates = []
+    this.marketPrices = []
     this.daysRange = days
     this.coinService.getMarketRange(this.CoinId, this.daysRange).subscribe((coinMarketRange) => {
       coinMarketRange.prices.map(data => {
         let unixToDate = new Date(data[0])
-        this.marketDates.push(`${unixToDate.getDate()}/${unixToDate.getMonth()}/${unixToDate.getFullYear()}`)
+        
+        if(this.daysRange > 1){
+          this.marketDates.push(`${unixToDate.getDate()}/${unixToDate.getMonth()}/${unixToDate.getFullYear()}`)
+        }else{
+          this.marketDates.push(`${unixToDate.getHours()}:${unixToDate.getMinutes()}/${unixToDate.getDate()}`)
+        }
+
         let priceToFixed = data[1].toFixed(2)
         this.marketPrices.push(priceToFixed)
       })
       //Draw Chart
-      this.testChart = new Chart("myChart", {
+      this.coinChart = new Chart("myChart", {
         type: 'bar',
         data: {
           datasets: [{
-            label: this.CoinId,
+            label: this.CoinId.toLocaleUpperCase(),
             data: this.marketPrices,
             backgroundColor: 'red',
             borderColor: 'black',
@@ -102,6 +103,6 @@ export class CoinDetailComponent implements OnInit {
       });
     });
   }
-  }
+}
 
 
