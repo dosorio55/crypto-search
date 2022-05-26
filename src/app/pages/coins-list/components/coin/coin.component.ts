@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { WatchListService } from 'src/app/core/services/watchList/watch-list.service';
 import { ICoins } from '../../../../core/services/models/product.models';
 
 @Component({
@@ -12,9 +13,17 @@ export class CoinComponent implements OnInit {
 
   @Input() public coins?: ICoins;
 
-  constructor() { }
+  constructor(private watchListService: WatchListService) { }
 
   ngOnInit(): void {
+  }
+
+  public addToWatchList(coin: ICoins){
+    this.watchListService.addCoinToWatchlist({
+      "id": coin.id,
+      "name": coin.name,
+      "price": coin.current_price
+  }).subscribe((res) => console.log(coin.id))
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoinsService } from 'src/app/core/services/coins/coins.service';
+import { WatchListService } from 'src/app/core/services/watchList/watch-list.service';
 import { ICoins } from '../../core/services/models/product.models';
 
 @Component({
@@ -15,7 +16,8 @@ export class CoinsListComponent implements OnInit {
 
   constructor(
     //coin service to get products
-    private coinsService: CoinsService
+    private coinsService: CoinsService,
+    private watchListService: WatchListService
     ) { }
 
 
@@ -25,9 +27,16 @@ export class CoinsListComponent implements OnInit {
      this.coinsList = coins;
     })
   }
-
+  
   public pageNumberFunction(actualPage : number){
     this.pageNumber = actualPage
   }
-
+  
+  // public addToWatchList(){
+  //   this.watchListService.addCoinToWatchlist({
+  //     "name": "ella vio los cuadrios más famosos",
+  //     "price": 5000
+  // }).subscribe((res) => console.log(res))
+  // }
+  
 }

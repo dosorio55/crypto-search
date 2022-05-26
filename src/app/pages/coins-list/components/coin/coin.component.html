@@ -1,4 +1,5 @@
 <div [routerLink]="['/coin-detail', coins.id ]" *ngIf="coins" class="listContainer">
+    <button (click)="addToWatchList(coins)">send</button>
     <div class="listContainer__name">
         <img class="listContainer__img" [src]="coins.image" alt="">
         <div class="listContainer__name__container">
