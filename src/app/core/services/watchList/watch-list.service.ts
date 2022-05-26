@@ -12,16 +12,16 @@ export class WatchListService {
   constructor(private httpClient: HttpClient) { }
 
   public getWatchProducts(): Observable<IWatchLlist[]>{
-    return this.httpClient.get<IWatchLlist[]>(`http://localhost:4000/coins`)
+    return this.httpClient.get<IWatchLlist[]>(`https://server-cryptodiego.herokuapp.com/coins`)
   }
 
   public addCoinToWatchlist(body: IWatchLlist): Observable<IPostResponse>{
-    return this.httpClient.post<IPostResponse>('http://localhost:4000/coins',
+    return this.httpClient.post<IPostResponse>('https://server-cryptodiego.herokuapp.com/coins',
     body
     )
   }
 
   public deleteWCoin(idCoin: string): Observable<IWatchLlist>{
-    return this.httpClient.delete<IWatchLlist>(`http://localhost:4000/coins/${idCoin}`)
+    return this.httpClient.delete<IWatchLlist>(`https://server-cryptodiego.herokuapp.com/coins/${idCoin}`)
   }
 }

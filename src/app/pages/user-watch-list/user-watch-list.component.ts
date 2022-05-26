@@ -8,6 +8,8 @@ import { WatchListService } from 'src/app/core/services/watchList/watch-list.ser
 })
 export class UserWatchListComponent implements OnInit {
 
+  
+
   constructor(private watchListService: WatchListService) { }
 
   ngOnInit(): void {
