@@ -24,7 +24,9 @@ export class CoinDetailComponent implements OnInit {
     private coinService: CoinsService) { }
 
   ngOnInit(): void {
-
+    if (this.testChart) {
+      this.testChart.destroy();
+  }
     this.activatedRoute.params.subscribe((params) => {
       const CoinId = params['id'];
       this.currentCoin$ = this.coinService.getCoinById(CoinId);

@@ -10,8 +10,7 @@ import { UserWatchListComponent } from './pages/user-watch-list/user-watch-list.
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UserWatchListComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

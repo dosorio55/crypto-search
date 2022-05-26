@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IWatchLlist } from 'src/app/core/services/models/watchList.models';
 import { WatchListService } from 'src/app/core/services/watchList/watch-list.service';
 
 @Component({
@@ -8,13 +9,14 @@ import { WatchListService } from 'src/app/core/services/watchList/watch-list.ser
 })
 export class UserWatchListComponent implements OnInit {
 
-  
+  public userCoins?: IWatchLlist[]
 
   constructor(private watchListService: WatchListService) { }
 
   ngOnInit(): void {
-    this.watchListService.getWatchProducts().subscribe((Wcoins =>{
-      console.log(Wcoins)
+    this.watchListService.getWatchProducts().subscribe((watchedCoins =>{
+      this.userCoins = watchedCoins;
+      console.log(this.userCoins)
     }))
   }
 

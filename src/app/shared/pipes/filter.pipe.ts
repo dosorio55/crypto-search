@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { ICoins } from 'src/app/core/services/models/product.models';
 
-const PageLimit : number = 10;
+const PageLimit : number = 20;
 @Pipe({
   name: 'filter'
 })

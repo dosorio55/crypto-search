@@ -14,7 +14,7 @@ export class CoinsService {
   constructor(private httpClient: HttpClient) { }
 
   public getCoins(): Observable<ICoins[]> {
-    return this.httpClient.get<IApiCoins[]>(`${environment.apiUrl}coins/markets?vs_currency=eur&order=market_cap_desc&per_page=25&page=1&sparkline=false`)
+    return this.httpClient.get<IApiCoins[]>(`${environment.apiUrl}coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false`)
       .pipe(map(res => transformProduct(res)
       )
       )

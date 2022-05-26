@@ -1,0 +1,25 @@
+.coinListContainer{
+    width: 100vw;
+    height: 80vh;
+    // background-color: antiquewhite;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > div {
+        padding: 3.5rem;
+        margin: 3rem;
+    }
+
+    .coinContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &__img {
+            padding-bottom: 2rem;
+
+        }
+    }
+
+}
