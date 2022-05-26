@@ -20,10 +20,15 @@ export class CoinComponent implements OnInit {
 
   public addToWatchList(coin: ICoins){
     this.watchListService.addCoinToWatchlist({
-      "id": coin.id,
+      "_id": coin.id,
       "name": coin.name,
       "price": coin.current_price
   }).subscribe((res) => console.log(coin.id))
+  }
+
+  public deleteWatchedCoin(idCoin: string){
+    console.log(idCoin)
+    this.watchListService.deleteWCoin(idCoin).subscribe((coin) => console.log('eliminado', coin))
   }
 
 }
