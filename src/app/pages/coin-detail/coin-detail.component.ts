@@ -16,6 +16,7 @@ export class CoinDetailComponent implements OnInit {
   public currentCoin$?: Observable<ICoins[]>;
   public daysRange: number = 1;
   public testChart: any; 
+  public CoinId : string = "";
   
       public marketDates: string[] = [];
       public marketPrices: string[] = [];
@@ -28,9 +29,9 @@ export class CoinDetailComponent implements OnInit {
       this.testChart.destroy();
   }
     this.activatedRoute.params.subscribe((params) => {
-      const CoinId = params['id'];
-      this.currentCoin$ = this.coinService.getCoinById(CoinId);
-      this.coinService.getMarketRange(CoinId, this.daysRange).subscribe((coinMarketRange) => {
+      this.CoinId = params['id'];
+      this.currentCoin$ = this.coinService.getCoinById(this.CoinId);
+      this.coinService.getMarketRange(this.CoinId, this.daysRange).subscribe((coinMarketRange) => {
         coinMarketRange.prices.map(data => {
           let unixToDate = new Date(data[0])
           this.marketDates.push(`${unixToDate.getDate()}/${unixToDate.getMonth()}/${unixToDate.getFullYear()}`)
@@ -42,7 +43,7 @@ export class CoinDetailComponent implements OnInit {
           type: 'bar',
           data: {
             datasets: [{
-              label: CoinId,
+              label: this.CoinId,
               data: this.marketPrices,
               backgroundColor: 'red',
               borderColor: 'black',
@@ -71,8 +72,7 @@ export class CoinDetailComponent implements OnInit {
   this.marketDates = []
   this.marketPrices = []
     this.daysRange = days
-    console.log(days)
-    this.coinService.getMarketRange('bitcoin', this.daysRange).subscribe((coinMarketRange) => {
+    this.coinService.getMarketRange(this.CoinId, this.daysRange).subscribe((coinMarketRange) => {
       coinMarketRange.prices.map(data => {
         let unixToDate = new Date(data[0])
         this.marketDates.push(`${unixToDate.getDate()}/${unixToDate.getMonth()}/${unixToDate.getFullYear()}`)
@@ -84,7 +84,7 @@ export class CoinDetailComponent implements OnInit {
         type: 'bar',
         data: {
           datasets: [{
-            label: 'bitcoin',
+            label: this.CoinId,
             data: this.marketPrices,
             backgroundColor: 'red',
             borderColor: 'black',
