@@ -37,3 +37,13 @@ export interface IApiCoins {
     image: string;
     favorite: boolean;
   }
+
+  export interface IPostResponse {
+    name: string,
+    price: number,
+    _id: string,
+    createdAt: string,
+    updatedAt: string,
+    __v: number
+  }
+

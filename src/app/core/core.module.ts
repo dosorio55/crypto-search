@@ -7,6 +7,7 @@ import { CoinsService } from './services/coins/coins.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModalService } from './services/loIn/login-modal.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { WatchListService } from './services/watchList/watch-list.service';
 
 
 
@@ -17,7 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   providers: [
     CoinsService,
-    LoginModalService
+    LoginModalService,
+    WatchListService
   ],
   imports: [
     CommonModule,
