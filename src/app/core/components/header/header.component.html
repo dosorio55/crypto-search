@@ -4,5 +4,15 @@
         <li *ngFor="let item of homeLinks" class="headerContainer__links" [routerLink]="[item.routeHlink]"
             [ngClass]="{'headerContainer__links--active': activeUrl === item.routeHlink}">{{item.name}}</li>
     </ul>
-    <button class="headerContainer__loginBtn" [routerLink]="">login</button>
+    <button class="headerContainer__loginBtn" (click)="openModal()">login</button>
+    <div class="dropdown" (click)="dropDownActivated()">
+        <fa-icon class="dropdown__icon" [icon]="barsIcon" ></fa-icon>
+        <div class="dropdown__menu"
+        [ngClass]="{
+            'dropdown__menu--active' : dropDown
+        }">
+            <a [routerLink]="['/user-watchlist']">Watch List</a>
+            <a>menu2</a>
+        </div>
+    </div>
 </header>

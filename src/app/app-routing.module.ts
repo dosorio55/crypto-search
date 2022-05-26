@@ -20,6 +20,11 @@ const routes: Routes = [
     loadChildren: () => import('src/app/pages/contact-us/contact-us.module').then(m => m.ContactUsModule)
   },
   {
+    path: 'user-watchlist',
+    loadChildren: () => import('src/app/pages/user-watch-list/user-watch-list.module').then(m => m.UserWatchListModule)
+
+  },
+  {
     path: '**',
     redirectTo: ''
   }

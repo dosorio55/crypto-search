@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { faX } from '@fortawesome/free-solid-svg-icons';
+import { LoginModalService } from 'src/app/core/services/loIn/login-modal.service';
 
 @Component({
   selector: 'app-user-login',
@@ -8,12 +9,15 @@ import { faX } from '@fortawesome/free-solid-svg-icons';
 })
 export class UserLoginComponent implements OnInit {
 
-  public active: boolean = false;
+  public active: boolean = this.loginModalService.loginState
 
   public xIcon = faX;
-  constructor() { }
+  constructor(private loginModalService: LoginModalService) { }
 
   ngOnInit(): void {
+  this.active = this.loginModalService.loginState
   }
+
+
 
 }

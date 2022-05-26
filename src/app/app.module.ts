@@ -6,10 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UserWatchListComponent } from './pages/user-watch-list/user-watch-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    UserWatchListComponent,
   ],
   imports: [
     BrowserModule,
