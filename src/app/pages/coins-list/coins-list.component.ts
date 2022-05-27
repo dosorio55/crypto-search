@@ -16,7 +16,7 @@ export class CoinsListComponent implements OnInit {
 
   constructor(
     //coin service to get products
-    private coinsService: CoinsService,
+    private coinsService: CoinsService
     ) { }
 
 

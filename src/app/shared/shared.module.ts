@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
+import { FormComponent } from './components/form/form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,14 +14,18 @@ import { UserLoginComponent } from './components/user-login/user-login.component
     FilterPipe,
     SidebarComponent,
     UserLoginComponent,
+    FormComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     FilterPipe,
     SidebarComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    FormComponent,
   ]
 })
 export class SharedModule { }

@@ -25,6 +25,16 @@ const routes: Routes = [
 
   },
   {
+    path: 'create-coin',
+    loadChildren: () => import('src/app/pages/create-coin/create-coin.module').then(m => m.CreateCoinModule)
+
+  },
+  {
+    path: 'edit-coin/:coinId',
+    loadChildren: () => import('src/app/pages/edit-coin/edit-coin.module').then(m => m.EditCoinModule)
+
+  },
+  {
     path: '**',
     redirectTo: ''
   }
