@@ -70,9 +70,10 @@ export class CoinDetailComponent implements OnInit {
     this.coinService.getMarketRange(this.CoinId, this.daysRange).subscribe((coinMarketRange) => {
       coinMarketRange.prices.map(data => {
         let unixToDate = new Date(data[0])
+        console.log(unixToDate)
         
         if(this.daysRange > 1){
-          this.marketDates.push(`${unixToDate.getDate()}/${unixToDate.getMonth()}/${unixToDate.getFullYear()}`)
+          this.marketDates.push(`${unixToDate.getDate()}/${unixToDate.getMonth()+1}/${unixToDate.getFullYear()}`)
         }else{
           this.marketDates.push(`${unixToDate.getHours()}:${unixToDate.getMinutes()}/${unixToDate.getDate()}`)
         }

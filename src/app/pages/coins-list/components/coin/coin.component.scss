@@ -1,44 +1,56 @@
 .listContainer{
    display: grid;
-   grid-template-columns: repeat(4, 15rem);
+   grid-template-columns: repeat(5, 15rem);
    align-items: center;
    justify-content: center;
    padding: .3rem;
 
+   &__icon {
+    width: 35px;
+    height: 35px;
+    justify-self: center;
+}
    &:hover{
        background-color: #f1f1f1;
        cursor: pointer;
-   }
-
-
+    }
+    
+    & > p {
+        justify-self: center;
+    }
+    
     & > * {
         padding: .4rem;
         margin: 0 2rem;
         text-transform: uppercase;
-
+        
     }
-
+    
     &__name{
         display: flex;
         align-items: center;
-
+        
         &__container{
             padding: 0 0 0 1rem;
-
+            
             & > * {
                 padding: 0;
                 margin: 0rem;
             }
         }
     }
-
+    
     &__img{
-       width: 30px;
-       height: 30px; 
+        width: 30px;
+        height: 30px; 
     }
 }
 
 .line {
     background-color: rgb(173, 173, 173);
     height: 1px;
+    // max-width: 80%;
+    // justify-self: center;
+    // margin-left: 13rem;
 }
+

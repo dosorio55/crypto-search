@@ -24,20 +24,20 @@ export class HomeComponent implements OnInit {
       this.randomNumberA = Math.floor(Math.random() * 95)
       this.randomNumberB = this.randomNumberA + 4
       this.viewCoins = this.coinsList?.slice(this.randomNumberA, this.randomNumberB);
-      // this.timeOutNumber()
+      this.timeOutNumber()
     })
 
   }
 
-  // private timeOutNumber() {
-  //   for (let index = 0; index < 20; index++) {
-  //     setTimeout(() => {
-  //       this.randomNumberA = Math.floor(Math.random() * 95)
-  //       this.randomNumberB = this.randomNumberA + 4
-  //       this.viewCoins = this.coinsList?.slice(this.randomNumberA, this.randomNumberB);
-  //     }, 1000);
+  private timeOutNumber() {
+    for (let index = 0; index < 20; index++) {
+      setTimeout(() => {
+        this.randomNumberA = Math.floor(Math.random() * 95)
+        this.randomNumberB = this.randomNumberA + 4
+        this.viewCoins = this.coinsList?.slice(this.randomNumberA, this.randomNumberB);
+      }, 5000);
       
-  //   }
-  // }
+    }
+  }
 
 }
