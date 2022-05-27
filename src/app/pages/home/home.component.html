@@ -1,2 +1,16 @@
-<p>home works!</p>
 <app-user-login></app-user-login>
+<div class="home">
+    <div class="textContainer">
+        <h2>Welcome to</h2>
+        <h1>CryptoWorld</h1>
+        <p>The app were you can find all cryptocurrency information.</p>
+        <button [routerLink]="['coins-list']" class="textContainer__btn">Explore coins</button>
+    </div>
+    <div class="coinsContainer">
+        <app-home-list
+        *ngFor="let coin of viewCoins"
+        [homeCoin]="coin"
+    
+        ></app-home-list>
+    </div>
+</div>

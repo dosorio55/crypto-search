@@ -1,0 +1,18 @@
+.coinContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1.75rem;
+    // margin: 1rem;
+    // background-color: antiquewhite;
+
+    &__img{
+        width: 100px;
+        height: 100px;
+        margin: .75rem;
+    }
+
+    &__text{
+        font-weight: 500;
+    }
+}

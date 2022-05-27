@@ -1,0 +1,7 @@
+<div *ngIf="homeCoin" class="coinContainer" [routerLink]="['/coin-detail', homeCoin.id ]">
+    <img class="coinContainer__img" [src]="homeCoin.image" [alt]="homeCoin.name">
+    <div class="coinContainer__text">
+        <p>{{homeCoin.current_price | currency}}</p>
+        <p>{{homeCoin.name}}</p>
+    </div>
+</div>
