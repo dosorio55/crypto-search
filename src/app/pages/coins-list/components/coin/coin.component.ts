@@ -23,7 +23,8 @@ export class CoinComponent implements OnInit {
     this.watchListService.addCoinToWatchlist({
       "_id": coin.id,
       "name": coin.name,
-      "price": coin.current_price
+      "price": coin.current_price,
+      "image": coin.image
   }).subscribe({
     next: (res) => console.log(this.coinInWatchList),
     error: (err) => {

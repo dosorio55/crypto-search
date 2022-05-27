@@ -1,4 +1,7 @@
-<div *ngIf="watchedCoin">
+<div class="listContainer" *ngIf="watchedCoin">
+    <img class="listContainer__img" [src]="watchedCoin.image" alt="">
     <p>{{watchedCoin.name}}</p>
-    <p>{{watchedCoin.price}}</p>
+    <p>{{watchedCoin.price | currency}}</p>
+</div>
+<div class="line">
 </div>

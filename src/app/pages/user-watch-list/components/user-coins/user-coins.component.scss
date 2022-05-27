@@ -1,0 +1,25 @@
+.listContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 10rem);
+    align-items: center;
+    justify-content: center;
+    padding: .3rem;
+
+
+    &>* {
+        padding: .4rem;
+        margin: 0 2rem;
+        text-transform: uppercase;
+
+    }
+
+    &__img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.line {
+    background-color: rgb(173, 173, 173);
+    height: 1px;
+}
