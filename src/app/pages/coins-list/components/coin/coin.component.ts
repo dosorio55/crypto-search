@@ -10,6 +10,7 @@ import { ICoins } from '../../../../core/services/models/product.models';
 export class CoinComponent implements OnInit {
 
   public currencyCoin: string = "USD"
+  public coinInWatchList: boolean = false
 
   @Input() public coins?: ICoins;
 
@@ -23,7 +24,13 @@ export class CoinComponent implements OnInit {
       "_id": coin.id,
       "name": coin.name,
       "price": coin.current_price
-  }).subscribe((res) => console.log(coin.id))
+  }).subscribe({
+    next: (res) => console.log(this.coinInWatchList),
+    error: (err) => {
+      this.coinInWatchList = true
+    return console.log(this.coinInWatchList)
+    }
+  }  )
   }
 
   public deleteWatchedCoin(idCoin: string){

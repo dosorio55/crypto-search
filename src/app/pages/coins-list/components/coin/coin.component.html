@@ -1,6 +1,8 @@
-<div [routerLink]="['/coin-detail', coins.id ]" *ngIf="coins" class="listContainer">
+<div *ngIf="coins">
     <button (click)="addToWatchList(coins)">send</button>
     <button (click)="deleteWatchedCoin(coins.id)">delete</button>
+</div>
+<div [routerLink]="['/coin-detail', coins.id ]" *ngIf="coins" class="listContainer">
     <div class="listContainer__name">
         <img class="listContainer__img" [src]="coins.image" alt="">
         <div class="listContainer__name__container">
@@ -11,6 +13,7 @@
     <p>{{coins.current_price | currency: currencyCoin}}</p>
     <p>{{coins.market_cap}}</p>
     <p>{{coins.price_change_percentage_24h.toFixed(2)}}%</p>
+    <button *ngIf="coinInWatchList">la moneda {{coins.name}} ya está en watchlist</button>
 </div>
 <div class="line">
 </div>

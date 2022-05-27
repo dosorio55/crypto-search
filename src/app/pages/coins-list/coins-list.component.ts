@@ -17,7 +17,6 @@ export class CoinsListComponent implements OnInit {
   constructor(
     //coin service to get products
     private coinsService: CoinsService,
-    private watchListService: WatchListService
     ) { }
 
 
@@ -31,12 +30,5 @@ export class CoinsListComponent implements OnInit {
   public pageNumberFunction(actualPage : number){
     this.pageNumber = actualPage
   }
-  
-  // public addToWatchList(){
-  //   this.watchListService.addCoinToWatchlist({
-  //     "name": "ella vio los cuadrios más famosos",
-  //     "price": 5000
-  // }).subscribe((res) => console.log(res))
-  // }
   
 }
