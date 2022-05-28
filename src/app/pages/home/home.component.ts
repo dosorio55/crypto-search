@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
         this.randomNumberB = this.randomNumberA + 4
         this.viewCoins = this.coinsList?.slice(this.randomNumberA, this.randomNumberB);
       }, 5000);
-      
+     //set interval  
     }
   }
 

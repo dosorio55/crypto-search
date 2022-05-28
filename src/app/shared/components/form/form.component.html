@@ -1,29 +1,31 @@
-<form *ngIf="coinForm" [formGroup]="coinForm" (submit)="uploadCoin()">
-    <div>
-        <input type="text" placeholder="Coin unique ID" formControlName="_id">
-        <p
-            *ngIf="!coinForm.get('_id')?.valid && coinForm.get('_id')?.dirty"
-        >this field is required</p>
-    </div>
-    <div>
-        <input type="text" placeholder="Coin Name" formControlName="name">
-        <p
-            *ngIf="!coinForm.get('name')?.valid && coinForm.get('name')?.dirty"
-        >this field is required</p>
-    </div>
-    <div>
-        <input type="text" placeholder="Price" formControlName="price">
-        <p
-            *ngIf="!coinForm.get('price')?.valid && coinForm.get('price')?.dirty"
-        >this field is required</p>
-    </div>
-    <div>
-        <input type="text" placeholder="image URL" formControlName="image">
-        <p
-            *ngIf="!coinForm.get('image')?.valid && coinForm.get('image')?.dirty"
-        >this field is required</p>
-    </div>
-    <button type="submit"
-    [disabled]="!coinForm.valid"
-    >{{coin ? 'Edit' : 'Create'}}</button>
-</form>
+<div class="formContainer">
+    <form class="form" *ngIf="coinForm" [formGroup]="coinForm" (submit)="uploadCoin()">
+        <div>
+            <input class="form_input" type="text" placeholder="Coin unique ID" formControlName="_id">
+            <p
+                *ngIf="!coinForm.get('_id')?.valid && coinForm.get('_id')?.dirty"
+            >this field is required</p>
+        </div>
+        <div>
+            <input class="form_input" type="text" placeholder="Coin Name" formControlName="name">
+            <p
+                *ngIf="!coinForm.get('name')?.valid && coinForm.get('name')?.dirty"
+            >this field is required</p>
+        </div>
+        <div>
+            <input class="form_input" type="text" placeholder="Price" formControlName="price">
+            <p
+                *ngIf="!coinForm.get('price')?.valid && coinForm.get('price')?.dirty"
+            >this field is required</p>
+        </div>
+        <div>
+            <input class="form_input" type="text" placeholder="image URL" formControlName="image">
+            <p
+                *ngIf="!coinForm.get('image')?.valid && coinForm.get('image')?.dirty"
+            >this field is required</p>
+        </div>
+        <button type="submit"
+        [disabled]="!coinForm.valid"
+        >{{coin ? 'Edit' : 'Create'}}</button>
+    </form>
+</div>
