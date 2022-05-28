@@ -3,7 +3,7 @@
 </div>
 <div class="watchListContainer">
     <app-user-coins *ngFor="let coin of userCoins" [watchedCoin]="coin"
-    (deleteCoin)="coinDeleted()"
+    (deleteCoin)="getWatchlist()"
     >
     
     </app-user-coins>

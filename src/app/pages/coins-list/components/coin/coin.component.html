@@ -1,6 +1,6 @@
 <div *ngIf="coins" class="listContainer">
     <p class="popup" *ngIf="addedToWatchList">{{coins.name}} has been added to your watchlist</p>
-    <p class="popup" *ngIf="coinInWatchList">error, {{coins.name}} it's already in your watchlist</p>
+    <p class="popup2" *ngIf="coinInWatchList">error!! {{coins.name}} it's already in your watchlist</p>
     <div [routerLink]="['/coin-detail', coins.id ]" class="listContainer__name">
         <img class="listContainer__img" [src]="coins.image" alt="">
         <div class="listContainer__name__container">
