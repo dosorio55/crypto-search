@@ -14,10 +14,16 @@ export class UserWatchListComponent implements OnInit {
   constructor(private watchListService: WatchListService) { }
 
   ngOnInit(): void {
-    this.watchListService.getWatchProducts().subscribe((watchedCoins =>{
+    this.watchListService.getWatchProducts().subscribe((watchedCoins => {
       this.userCoins = watchedCoins;
       console.log(this.userCoins)
     }))
   }
 
+  public coinDeleted() {
+    this.watchListService.getWatchProducts().subscribe((watchedCoins => {
+      this.userCoins = watchedCoins;
+      console.log(this.userCoins)
+    }))
+  }
 }

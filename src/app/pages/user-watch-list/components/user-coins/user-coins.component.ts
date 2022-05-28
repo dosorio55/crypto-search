@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { IWatchLlist } from 'src/app/core/services/models/watchList.models';
+import { WatchListService } from 'src/app/core/services/watchList/watch-list.service';
 
 @Component({
   selector: 'app-user-coins',
@@ -8,11 +10,23 @@ import { IWatchLlist } from 'src/app/core/services/models/watchList.models';
 })
 export class UserCoinsComponent implements OnInit {
 
-  @Input() public watchedCoin?: IWatchLlist
+  @Input() public watchedCoin?: IWatchLlist;
+  @Output() public deleteCoin: EventEmitter<void> = new EventEmitter()
 
-  constructor() { }
+  constructor(
+    private watchListService: WatchListService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  public deleteWatchedCoin(idCoin: string) {
+    console.log(idCoin)
+    this.watchListService.deleteWCoin(idCoin).subscribe((coin) => {
+      this.deleteCoin.emit()
+      // console.log('eliminado', coin)
+    })
+      ;
+  }
 }

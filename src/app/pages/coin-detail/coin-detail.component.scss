@@ -1,6 +1,8 @@
 .coinListContainer {
     width: 100vw;
     height: 80vh;
+    user-select: none;
+
     // background-color: antiquewhite;
 
     display: flex;
@@ -33,6 +35,7 @@
 
 
         &>button {
+            cursor: pointer;
             margin: 0 5rem;
             padding: .75rem;
             background-color: #f9bc60;

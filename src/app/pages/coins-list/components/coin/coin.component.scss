@@ -54,3 +54,16 @@
     // margin-left: 13rem;
 }
 
+.popup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 30%;
+    left: 80%;
+    background-color: #f9bc60;
+    font-weight: 700;
+    border-radius: 5px;
+
+
+}

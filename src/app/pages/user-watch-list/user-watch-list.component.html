@@ -1,6 +1,10 @@
-
+<div class="titleContainer">
+    <h2>your watchlist</h2>
+</div>
 <div class="watchListContainer">
-    <app-user-coins *ngFor="let coin of userCoins" [watchedCoin]="coin">
+    <app-user-coins *ngFor="let coin of userCoins" [watchedCoin]="coin"
+    (deleteCoin)="coinDeleted()"
+    >
     
     </app-user-coins>
 </div>

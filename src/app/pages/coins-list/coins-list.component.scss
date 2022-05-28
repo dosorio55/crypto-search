@@ -1,6 +1,16 @@
-.container {
+.title{
+    display: flex;
+    justify-content: center;
+
+    &__text{
+    font-size: 3rem;
     margin-top: 3rem;
+}}
+.container {
+    margin-top: 1rem;
     min-height: 80vh;
+    justify-content: center;
+
 }
 
 .inputContainer{

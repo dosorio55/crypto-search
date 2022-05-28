@@ -1,0 +1,30 @@
+.footerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .5rem;
+        color: #f9bc60;
+        
+        & > * {
+            
+            padding: .5rem;
+        }
+
+    }
+    
+    min-height: 11vh;
+    // padding: 2rem;
+    background-color: #24252a;
+    text-transform: uppercase;
+    user-select: none;
+
+    &__icon{
+        color: #edf0f1;
+        font-size: 25px;
+    }
+}

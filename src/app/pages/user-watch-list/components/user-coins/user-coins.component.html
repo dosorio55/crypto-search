@@ -2,6 +2,8 @@
     <img class="listContainer__img" [src]="watchedCoin.image" alt="">
     <p>{{watchedCoin.name}}</p>
     <p>{{watchedCoin.price | currency}}</p>
+    <button (click)="deleteWatchedCoin(watchedCoin._id)">delete</button>
+    <button [routerLink]="['/edit-coin', watchedCoin._id]">edit</button>
 </div>
 <div class="line">
 </div>
