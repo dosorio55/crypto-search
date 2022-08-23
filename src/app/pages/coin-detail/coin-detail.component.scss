@@ -1,0 +1,46 @@
+.coinListContainer {
+    width: 100vw;
+    height: 80vh;
+    user-select: none;
+
+    // background-color: antiquewhite;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &>div {
+        padding: 3.5rem;
+        margin: 3rem;
+    }
+
+    .coinContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &__img {
+            padding-bottom: 2rem;
+
+        }
+    }
+
+}
+
+.chartContainer {
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+
+
+        &>button {
+            cursor: pointer;
+            margin: 0 5rem;
+            padding: .75rem;
+            background-color: #f9bc60;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+    }
+}

@@ -14,6 +14,24 @@ const routes: Routes = [
   {
     path: 'coin-detail/:id',
     loadChildren: () => import('src/app/pages/coin-detail/coin-detail.module').then(m => m.CoinDetailModule)
+  },
+  {
+    path: 'contact-us',
+    loadChildren: () => import('src/app/pages/contact-us/contact-us.module').then(m => m.ContactUsModule)
+  },
+  {
+    path: 'user-watchlist',
+    loadChildren: () => import('src/app/pages/user-watch-list/user-watch-list.module').then(m => m.UserWatchListModule)
+
+  },
+  {
+    path: 'create-coin',
+    loadChildren: () => import('src/app/pages/create-coin/create-coin.module').then(m => m.CreateCoinModule)
+
+  },
+  {
+    path: 'edit-coin/:coinId',
+    loadChildren: () => import('src/app/pages/edit-coin/edit-coin.module').then(m => m.EditCoinModule)
 
   },
   {

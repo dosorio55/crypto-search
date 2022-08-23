@@ -1,0 +1,74 @@
+.title{
+    display: flex;
+    justify-content: center;
+    user-select: none;
+
+
+    &__text{
+    font-size: 3rem;
+    margin-top: 3rem;
+}}
+.container {
+    margin-top: 1rem;
+    min-height: 80vh;
+    justify-content: center;
+
+}
+
+.inputContainer{
+    display: grid;
+    grid-template-columns: repeat(5, 15rem);
+    align-items: center;
+    justify-content: center;
+
+    & input {
+        margin-left: 2.3rem;
+        border-radius: 15px;
+        height: 1.8rem;
+    }
+}
+
+.theadContainer{
+    display: grid;
+    grid-template-columns: repeat(5, 15rem);
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+        font-weight: 700;
+        padding: .5rem;
+        margin: 1rem 2rem;
+        text-transform: uppercase;
+    }
+
+    & > p:not(:first-child){
+        justify-self: center;
+    }
+}
+
+.paginationContainer {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &__button{
+        
+        padding: 0.75rem 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        user-select: none;
+        
+        &:focus {
+            color: aqua;
+
+        }
+
+    }
+    
+    &__icon {
+        height: 15px;
+        width: 15px;
+    }
+}
+

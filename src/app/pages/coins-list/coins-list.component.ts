@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { coins, ICoins } from './coins-list.config';
+import { CoinsService } from 'src/app/core/services/coins/coins.service';
+import { WatchListService } from 'src/app/core/services/watchList/watch-list.service';
+import { ICoins } from '../../core/services/models/product.models';
 
 @Component({
   selector: 'app-coins-list',
@@ -8,18 +10,25 @@ import { coins, ICoins } from './coins-list.config';
 })
 export class CoinsListComponent implements OnInit {
 
-  public coinsList : ICoins[] = coins;
-  public filteredCoins: ICoins[] =  this.coinsList;
+  public coinsList?: ICoins[];
   public searchValue: string = "";
+  public pageNumber: number = 0;
 
-  constructor() { }
+  constructor(
+    //coin service to get products
+    private coinsService: CoinsService
+    ) { }
 
+
+  //suscribe to the api to get products
   ngOnInit(): void {
+    this.coinsService.getCoins().subscribe((coins) => {
+     this.coinsList = coins;
+    })
   }
-
-  onSearch(){
-    this.filteredCoins = this.coinsList.filter(coins => coins.name.toLocaleLowerCase()
-    .includes(this.searchValue.toLocaleLowerCase()))
+  
+  public pageNumberFunction(actualPage : number){
+    this.pageNumber = actualPage
   }
-
+  
 }
