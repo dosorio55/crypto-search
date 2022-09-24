@@ -30,14 +30,11 @@ export class HomeComponent implements OnInit {
   }
 
   private timeOutNumber() {
-    for (let index = 0; index < 20; index++) {
-      setTimeout(() => {
+    setInterval
+      setInterval(() => {
         this.randomNumberA = Math.floor(Math.random() * 95)
         this.randomNumberB = this.randomNumberA + 4
         this.viewCoins = this.coinsList?.slice(this.randomNumberA, this.randomNumberB);
       }, 5000);
-     //set interval rxjs
-    }
   }
-
 }

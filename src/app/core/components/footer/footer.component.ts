@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faYoutube, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -10,9 +10,9 @@ import { faCoins } from '@fortawesome/free-solid-svg-icons';
 export class FooterComponent implements OnInit {
 
   //fontawesome Icon
-  public faceIcon = faFacebook;
-  public youtubeIcon = faYoutube;
-  public coinGecko = faCoins
+  public coinGecko = faCoins;
+  public github = faGithub;
+  public linkedIn = faLinkedin;
 
   constructor() { }
 
